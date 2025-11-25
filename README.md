@@ -1,0 +1,1 @@
+Simple showcase for product listing using react + vite. 
