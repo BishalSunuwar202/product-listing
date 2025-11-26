@@ -14,6 +14,7 @@ export function ProductList() {
   const [category, setCategory] = useState("")
   const [sortBy, setSortBy] = useState("")
   const { theme, toggleTheme } = useTheme()
+  console.log(theme)
   const { addToCart, getCartCount } = useCart()
   const observerTarget = useRef(null)
 
@@ -92,8 +93,9 @@ export function ProductList() {
 
   return (
     <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4">
+        
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-        <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl font-bold">Product Store</h1>
             <div className="flex items-center gap-4">
@@ -154,10 +156,9 @@ export function ProductList() {
               <option value="rating-desc">Rating: High to Low</option>
             </Select>
           </div>
-        </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="py-8">
         {isLoading ? (
           <div className="flex items-center justify-center py-20">
             <div className="flex flex-col items-center gap-4">
@@ -171,7 +172,7 @@ export function ProductList() {
           </div>
         ) : (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
               {products.map((product) => (
                 <ProductCard
                   key={product.id}
@@ -191,6 +192,8 @@ export function ProductList() {
           </>
         )}
       </main>
+      </div>
+
     </div>
   )
 }
