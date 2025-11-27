@@ -41,7 +41,6 @@ export function ProductList() {
       return totalLoaded < lastPage.total ? allPages.length : undefined
     },
   })
-  console.log(data)
   
   const products = useMemo(() => {
     if (!data) return []
@@ -92,7 +91,7 @@ export function ProductList() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background mt-3">
       <div className="container mx-auto px-4">
         
       <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
